@@ -6,5 +6,33 @@
  */
 
 task firstTask {
+	def abc = 123
+	println abc
 	println 'Gradle Rocks!'
 }
+
+task deployToStage {
+	doLast {
+		println 'Deployed to stage'
+	}
+}
+
+task deployToProd {
+	doLast {
+		println 'Deployed to prod'
+	}
+}
+
+task cleanupFiles {
+	doLast {
+		println 'Cleaned Up Files'
+	}
+}
+
+deployToProd.dependsOn deployToStage
+deployToProd.finalizedBy cleanupFiles
+defaultTasks "deployToStage"
+/*
+task (secondTask) {
+	println 'Gradle is the Best!'
+}*/
