@@ -1,0 +1,10 @@
+plugins {
+    id 'war'
+    id 'org.gretty' version '4.0.1'
+}
+
+dependencies {
+    compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '5.0.0'
+}
+
+gretty.httpPort = 8080
