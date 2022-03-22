@@ -18,7 +18,7 @@ public class CouponServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String coupon = request.getParameter("coupon");
-        request.setAttribute("discount", "discount for coupon " + coupon + " is 50%");
+        request.setAttribute("discount", "Discount for coupon " + coupon + " is 50%");
         request.getRequestDispatcher("response.jsp").forward(request, response);
     }
 }

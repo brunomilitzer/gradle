@@ -1,4 +1,4 @@
-package com.brunomilitzer.gradle;
+package com.brunomilitzer.gradleapp;
 
 import java.io.IOException;
 import jakarta.servlet.ServletException;
