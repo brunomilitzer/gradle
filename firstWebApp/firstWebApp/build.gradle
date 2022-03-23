@@ -6,6 +6,8 @@
  * User Manual available at https://docs.gradle.org/7.4.1/userguide/building_java_projects.html
  */
 
+import MyAWSPlugin
+
 plugins {
     id 'war'
     id 'org.gretty' version '4.0.1'
@@ -25,5 +27,8 @@ dependencies {
 
 gretty.httpPort = 8081
 
+apply plugin: MyAWSPlugin
+
 test.finalizedBy jacocoTestReport
 jacocoTestReport.dependsOn test
+deployToEC2.dependsOn copyToS3
